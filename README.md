@@ -32,7 +32,7 @@ We present, to our knowledge, the **first end-to-end neuromorphic system that si
 
 ---
 
-## 📰 Release checklist
+##  Release checklist
 
 - [x] Project repository and documentation
 - [x] Supplementary demonstration videos (M1–M4)
@@ -50,32 +50,15 @@ Imaging and tracking objects moving along random, unpredictable trajectories thr
 
 ---
 
-## ✨ Key contributions
+##  Key contributions
 
 1. **Temporal contrast for imaging in turbid media.** By capturing only temporal intensity changes, the event sensor suppresses the static scattering background, enabling tracking and reconstruction of randomly moving targets through dense turbid media.
 2. **A modular SNN for joint tracking and reconstruction.** A spiking network with parallel object-tracking and image-reconstruction modules processes everything as spikes in a single asynchronous event stream, exploiting sparse, event-driven computation and the intrinsic membrane-potential memory of spiking neurons to achieve low latency (**< 15 ms**) and low power (**~20× less than an ANN** on a standard GPU).
 3. **Validation across diverse scattering environments.** Across reflection and transmission geometries — solid phantoms, turbid water, and dynamic fog — the system delivers high-fidelity reconstruction (**SSIM 0.81–0.96**) with accurate trajectory recovery.
 
 ---
-<!--
-## 🧠 Method
 
-The pipeline is fully neuromorphic end to end. Raw, asynchronous DVS events `[p, t, x, y]` are discretized into spike tensors `[T, C, H, W]` and routed simultaneously to two task branches built from **leaky integrate-and-fire (LIF)** neurons with stateful synapse filters that retain short-term temporal memory:
-
-- **Object Tracking Module (OTM)** — a compact downsampling SNN encoder followed by a shallow fully-connected spiking head that maps latent features to target coordinates `(x, y)`. Only the final spiking layer resets at each time step, so the tracker localizes the target before reconstruction has fully converged.
-- **Object Reconstruction Module (ORM)** — a spiking U-Net-like encoder–decoder with skip connections that recovers spatial detail.
-- **Residual Refinement Module (RRM)** — a smaller spiking encoder–decoder that learns a residual correction on top of the ORM output to sharpen fine structure.
-
-The two task branches are trained separately with their own losses (no cross-module backpropagation) and fused at inference to process the same input stream in parallel.
-
-<p align="center">
-  <img src="assets/fig3_architecture.png" width="95%" alt="Deep spiking neural network architecture (ORM + RRM + OTM)"/>
-</p>
-<p align="center"><i>SNN architecture: parallel Object Reconstruction (ORM), Residual Refinement (RRM), and Object Tracking (OTM) modules operating on a shared event stream.</i></p>
--->
----
-
-## 🔬 Experimental setup
+##  Experimental setup
 
 Benchtop experiments used **reflection** and **transmission** geometries. Scattering strength is quantified by the measured **optical thickness (OT)** rather than an unquantified diffuser, with photon mean free path (MFP) estimates reported in the supplement. Events are recorded with a **Prophesee Gen 3.0 EVK DVS** (640 × 480 px, 9.6 × 7.2 mm² active area); a frame-based CMOS camera is used only as an alignment reference.
 
@@ -92,7 +75,7 @@ Benchtop experiments used **reflection** and **transmission** geometries. Scatte
 
 ---
 
-## 📊 Results
+##  Results
 
 <div align="center">
 
@@ -133,7 +116,7 @@ Benchtop experiments used **reflection** and **transmission** geometries. Scatte
 
 ---
 
-## 🎬 Supplementary videos
+##  Supplementary videos
 
 The four supplementary videos are included in this repository under [`videos/`](videos/). Click a thumbnail to open the corresponding video.
 
@@ -164,7 +147,7 @@ The four supplementary videos are included in this repository under [`videos/`](
 
 ---
 
-## 📁 Repository structure
+##  Repository structure
 
 ```
 neuromorphic-imaging/
@@ -195,7 +178,7 @@ neuromorphic-imaging/
 
 ---
 
-## ⚙️ Getting started
+##  Getting started
 
 > [!IMPORTANT]
 > Source code is **not yet released**. It will be made available in [`code/`](code/) after the manuscript is published. Training and inference instructions, environment specifications, and pre-trained weights will accompany that release. The model was trained on a single **NVIDIA RTX 3090** (~6 min/epoch; full 18-step inference < 15 ms).
@@ -204,7 +187,7 @@ Watch / star this repository to be notified when the code and datasets go live.
 
 ---
 
-## 📝 Citation
+##  Citation
 
 This manuscript is under review. If you reference this work in the meantime, please cite it as:
 
@@ -222,13 +205,13 @@ The BibTeX entry above will be updated with the final venue, volume, and DOI upo
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 The authors thank **Connor Macken** for building the fog chamber and **Jiaxin Lei** and **Rebekah Zhao** for helpful critique and suggestions. This research was supported by grants from **Intel Laboratories** (CG70982727, 2021) and the **Office of Naval Research** (N00014-25-1-2061).
 
 ---
 
-## 📧 Contact
+##  Contact
 
 For questions about the paper or this repository, please contact:
 
