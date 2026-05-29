@@ -57,7 +57,7 @@ Imaging and tracking objects moving along random, unpredictable trajectories thr
 3. **Validation across diverse scattering environments.** Across reflection and transmission geometries — solid phantoms, turbid water, and dynamic fog — the system delivers high-fidelity reconstruction (**SSIM 0.81–0.96**) with accurate trajectory recovery.
 
 ---
-
+<!--
 ## 🧠 Method
 
 The pipeline is fully neuromorphic end to end. Raw, asynchronous DVS events `[p, t, x, y]` are discretized into spike tensors `[T, C, H, W]` and routed simultaneously to two task branches built from **leaky integrate-and-fire (LIF)** neurons with stateful synapse filters that retain short-term temporal memory:
@@ -72,7 +72,7 @@ The two task branches are trained separately with their own losses (no cross-mod
   <img src="assets/fig3_architecture.png" width="95%" alt="Deep spiking neural network architecture (ORM + RRM + OTM)"/>
 </p>
 <p align="center"><i>SNN architecture: parallel Object Reconstruction (ORM), Residual Refinement (RRM), and Object Tracking (OTM) modules operating on a shared event stream.</i></p>
-
+-->
 ---
 
 ## 🔬 Experimental setup
