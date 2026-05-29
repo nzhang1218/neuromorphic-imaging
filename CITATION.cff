@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the manuscript below."
+title: "Neuromorphic Optical Tracking and Imaging of Randomly Moving Targets through Dynamic Dense Scattering Media"
+authors:
+  - family-names: "Zhang"
+    given-names: "Ning"
+    email: "ning_zhang1@brown.edu"
+    affiliation: "School of Engineering, Brown University"
+  - family-names: "Nurmikko"
+    given-names: "Arto"
+    email: "arto_nurmikko@brown.edu"
+    affiliation: "School of Engineering, Brown University"
+year: 2026
+notes: "Manuscript under review. Citation details will be updated upon publication."
+keywords:
+  - neuromorphic imaging
+  - spiking neural network
+  - dynamic vision sensor
+  - event camera
+  - imaging through scattering media
+  - object tracking
+  - image reconstruction
+repository-code: "https://github.com/nzhang1218/neuromorphic-imaging"

@@ -1,0 +1,33 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.idea/
+.vscode/
+
+# Python (for the forthcoming code release)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ML artifacts
+*.pth
+*.pt
+*.ckpt
+*.onnx
+runs/
+logs/
+wandb/
+
+# Large/raw data (released separately after publication)
+datasets/raw/
+datasets/**/*.npy
+datasets/**/*.h5
+datasets/**/*.hdf5
+*.raw
+*.dat
